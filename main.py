@@ -41,7 +41,7 @@ board = np.zeros((BOARD_ROWS, BOARD_COLS), dtype=int)
 # MBTI Pieces (Binary Encoding: I/E = 0/1, N/S = 0/1, T/F = 0/1, P/J = 0/1)
 pieces = [(i, j, k, l) for i in range(2) for j in range(2) for k in range(2) for l in range(2)]  # All 16 pieces
 available_pieces = pieces[:]
-
+ 
 # Global variable for selected piece
 selected_piece = None
 
@@ -191,7 +191,7 @@ while True:
             if pressed[pygame.K_SPACE]:
                 begin = time.time()
                 player = players[3-turn](board=board, available_pieces=available_pieces)
-                selected_piece = player.select_piece()
+                selected_piece = player.select_piece() 
                 finish = time.time()
                 total_time_consumption[3-turn]+=(finish-begin)
                 flag = "place_piece"
